@@ -4,9 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <script src="js/multi-lang-widget.js"></script> -->
+  <!-- <script src="js/multilang.js"></script> -->
   <!-- Widget script file -->
-  <script src="https://github.com/kiralikbeyin/Google-Translate-JS/blob/main/js/multi-lang-widget.js"></script>
+  <script src="https://raw.githubusercontent.com/kiralikbeyin/Google-Translate-JS/refs/heads/main/js/multilang.js"></script>
+  <script>
+    MultiLang.init('#language-widget-container');
+  </script>
   <title>Sample Page</title>
 </head>
 <body>
@@ -16,6 +19,10 @@
 
   <!-- Area where language selection button will be placed -->
   <div id="ml-lang-selector"></div>
-  
+
+  <script>
+    MultiLang.init('#language-widget-container');
+  </script>
+
 </body>
 </html>
