@@ -73,10 +73,8 @@ Below is an example of a basic HTML page using the widget:
 
 ## Support & Donations
 
-If you find this project useful, please consider supporting its development. Your support helps me continue working on this and other projects. You can donate via platforms such as Buy Me A Coffee.  
-(Note: Replace the above link with your actual donation URL.)
-
-<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="1979" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+If you find this project useful, please consider supporting its development.  
+[![Buy Me A Coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=&slug=1979&button_colour=FFDD00&font_colour=000000&font_family=Cookie)](https://www.buymeacoffee.com/1979)
 
 ## Contributing
 
@@ -106,7 +104,6 @@ This project is licensed under the MIT License. See the LICENSE file for details
 Feel free to modify the styling or the language list directly in `multi-lang-widget.js` as needed.
 
 **Support:**  
-If you enjoy using this widget, consider supporting the project via Buy Me A Coffee.
+If you enjoy using this widget, consider supporting the project via Buy Me a Coffee.
 
-
-<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="1979" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+<a href="https://www.buymeacoffee.com/1979" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
