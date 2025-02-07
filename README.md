@@ -57,34 +57,37 @@ Below is an example of a basic HTML page using the widget:
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://unpkg.com/google-translate-pure-js@latest/js/multilang.js"></script>  
-  <title>Sample Page</title>
+  <title>Multi-Language Example</title>
 </head>
 <body>
   <center>
-    <h1>Google Translate Widget</h1>
-    <p>Click on the flag to change the language.</p>
-  <h1>Welcome</h1>
-  <p>This content will be automatically translated according to your selected language.</p>
+    <h1>Multi-Language Widget Demo</h1>
+    <p>This text will be translated</p>
+    <p class="notranslate">This text will NOT be translated</p>
+    <p>Product name: <span class="notranslate">HomeHome.App Bridge</span></p>
 
-  <div id="multilang"></div>
-  <br><br><br><br><br><br><br>
-  <a href="https://www.buymeacoffee.com/1979" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+    <!-- Widget Placeholder -->
+    <div id="multilang"></div>
+
+    <br><br>
+    <a href="https://www.buymeacoffee.com/1979" target="_blank">
+      <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;">
+    </a>
   </center>
   <script>
-    // Optional: Configure with custom languages
+    // Initialize with custom languages
     initMultiLang({
-      pageLanguage: "en", // Set default page language
-      languages: [        // Optional: Override default languages
+      pageLanguage: "en",
+      languages: [
         { code: "en", name: "English", flag: "🇬🇧" },
         { code: "es", name: "Español", flag: "🇪🇸" },
         { code: "fr", name: "Français", flag: "🇫🇷" },
-        { code: "tr", name: "Türkçe", flag: "🇹🇷" },
-        // Add more languages as needed
+        { code: "tr", name: "Türkçe", flag: "🇹🇷" }
       ]
     });
 
-    // ➡️ Or use default configuration
-    // ➡️ ➡️ initMultiLang();
+    // ➡️ Or use default configuration:
+    // initMultiLang();
 
     /*
     initMultiLang defaults: 
@@ -107,7 +110,7 @@ Below is an example of a basic HTML page using the widget:
       { code: "es", name: "Español", flag: "🇪🇸" },
       { code: "sv", name: "Svenska", flag: "🇸🇪" },
       { code: "tr", name: "Türkçe", flag: "🇹🇷" },
-    */AnimationEffect
+    */
 
   </script>
 </body>
