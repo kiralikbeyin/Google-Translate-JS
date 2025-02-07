@@ -1,0 +1,24 @@
+{
+    "name": "google-translate-pure-js",
+    "version": "1.0.0",
+    "description": "A lightweight widget for multilingual website support using the Google Translate API.",
+    "main": "js/multilang.js",
+    "scripts": {
+      "test": "echo \"No tests specified\" && exit 0"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/kiralikbeyin/Google-Translate-JS.git"
+    },
+    "keywords": [
+      "wordpress",
+      "pure js",
+      "google",
+      "translate",
+      "multilingual",
+      "widget",
+      "i18n"
+    ],
+    "author": "Kiralikbeyin",
+    "license": "MIT"
+  }

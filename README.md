@@ -12,23 +12,30 @@ Multi-Language Widget is a lightweight JavaScript tool that lets you add multili
 
 ## Installation
 
-1. **Download or Clone the Repository**
+You can include the widget in your project in two ways:
 
-   Place the `multi-lang-widget.js` file in your project (for example, in a `js` folder).
+1. **Via CDN:**
+```html
+<script src="https://unpkg.com/google-translate-pure-js/js/multilang.js"></script>
+```
 
-2. **Include the Widget in Your HTML**
+2. **Download or Clone the Repository**
+
+   Place the `multilang.js` file in your project (for example, in a `js` folder).
+
+3. **Include the Widget in Your HTML**
 
    Add a placeholder element where you want the language selector button to appear, and then include the script:
 
    ```html
    <!-- Placeholder for the language selector (position it wherever you like) -->
-   <div id="ml-lang-selector"></div>
+   <div id="multilang"></div>
 
    <!-- Include the widget script -->
-   <script src="js/multi-lang-widget.js"></script>
+   <script src="js/multilang.js"></script>
    ```
 
-   If you do not provide a placeholder with the ID `ml-lang-selector`, the widget will automatically append the language button to the `<body>`.
+   If you do not provide a placeholder with the ID `multilang`, the widget will automatically append the language button to the `<body>`.
 
 ## Usage
 
@@ -57,19 +64,19 @@ Below is an example of a basic HTML page using the widget:
   <p>This content will be automatically translated based on your language selection.</p>
 
   <!-- Placeholder for the language selector -->
-  <div id="ml-lang-selector"></div>
+  <div id="multilang"></div>
 
   <!-- Include the widget script -->
-  <script src="js/multi-lang-widget.js"></script>
+  <script src="js/multilang.js"></script>
 </body>
 </html>
 ```
 
 ## Customization
 
-- **Styling:** The widget's CSS is injected via a `<style>` block within `multi-lang-widget.js`. You can edit this block to change the appearance.
-- **Language List:** Modify the `languages` array in `multi-lang-widget.js` to add or remove language options.
-- **Placeholder:** The widget looks for an element with the ID `ml-lang-selector` to insert the language button. Change or add your own placeholder as needed.
+- **Styling:** The widget's CSS is injected via a `<style>` block within `multilang.js`. You can edit this block to change the appearance.
+- **Language List:** Modify the `languages` array in `multilang.js` to add or remove language options.
+- **Placeholder:** The widget looks for an element with the ID `multilang` to insert the language button. Change or add your own placeholder as needed.
 
 ## Support & Donations
 
@@ -89,19 +96,19 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ### How to Use
 
 1. **Clone or Download the Repository:**  
-   Place the `multi-lang-widget.js` file into your project.
+   Place the `multilang.js` file into your project.
 
 2. **Add a Placeholder Element:**  
-   Insert a `<div id="ml-lang-selector"></div>` where you want the language selector button to appear.
+   Insert a `<div id="multilang"></div>` where you want the language selector button to appear.
 
 3. **Include the Script:**  
    Add the following line to your HTML file:
    ```html
-   <script src="js/multi-lang-widget.js"></script>
+   <script src="js/multilang.js"></script>
    ```
 
 **Customize:**  
-Feel free to modify the styling or the language list directly in `multi-lang-widget.js` as needed.
+Feel free to modify the styling or the language list directly in `multilang.js` as needed.
 
 **Support:**  
 If you enjoy using this widget, consider supporting the project via Buy Me a Coffee.

@@ -329,7 +329,7 @@
   
       // 4. Check where to place the button:
       // If developer added <div id="ml-lang-selector"></div> on page, add there, otherwise add to body
-      const placeholder = document.getElementById("multi-lang");
+      const placeholder = document.getElementById("multilang");
       if (placeholder) {
         placeholder.appendChild(langButton);
       } else {
