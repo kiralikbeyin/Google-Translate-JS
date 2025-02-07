@@ -1,8 +1,10 @@
 (function () {
-    "use strict";
-  
-    // List of defined languages
-    const languages = [
+  "use strict";
+
+  // Default configuration
+  const defaultConfig = {
+    pageLanguage: "en",
+    languages: [
       { code: "af", name: "Afrikaans", flag: "🇿🇦" },
       { code: "ar", name: "العربية", flag: "🇸🇦" },
       { code: "cs", name: "Čeština", flag: "🇨🇿" },
@@ -21,10 +23,20 @@
       { code: "es", name: "Español", flag: "🇪🇸" },
       { code: "sv", name: "Svenska", flag: "🇸🇪" },
       { code: "tr", name: "Türkçe", flag: "🇹🇷" },
-    ];
-  
-    let currentLang = "en";
-  
+    ]
+  };
+
+  // Merge user config with default config
+  window.initMultiLang = function(userConfig = {}) {
+    const config = {
+      ...defaultConfig,
+      ...userConfig,
+      languages: userConfig.languages || defaultConfig.languages
+    };
+
+    const languages = config.languages;
+    let currentLang = config.pageLanguage;
+
     /** Helper functions for setting and reading cookies **/
     function setCookie(name, value) {
       document.cookie = `${name}=${value}; path=/; max-age=31536000`;
@@ -34,7 +46,7 @@
       const parts = value.split(`; ${name}=`);
       if (parts.length === 2) return parts.pop().split(";").shift();
     }
-  
+
     /** Updates the content of the language button **/
     function updateLanguageButton(lang) {
       const btn = document.getElementById("ml-languageButton");
@@ -45,7 +57,7 @@
         `;
       }
     }
-  
+
     /** Shows the loading overlay **/
     function showLoading() {
       const loadEl = document.getElementById("ml-loadingOverlay");
@@ -56,7 +68,7 @@
       const loadEl = document.getElementById("ml-loadingOverlay");
       if (loadEl) loadEl.style.display = "none";
     }
-  
+
     /** Performs Google Translate language change operation **/
     function changeLanguage(langCode) {
       const lang = languages.find((l) => l.code === langCode);
@@ -77,7 +89,7 @@
         closePopup();
       }
     }
-  
+
     /** Shows the popup **/
     function openPopup() {
       const overlay = document.getElementById("ml-overlay");
@@ -87,7 +99,7 @@
         popup.style.display = "block";
       }
     }
-  
+
     /** Closes the popup **/
     function closePopup() {
       const overlay = document.getElementById("ml-overlay");
@@ -97,44 +109,41 @@
         popup.style.display = "none";
       }
     }
-  
+
     /** Callback function to be called when Google Translate API is loaded **/
     function googleTranslateElementInit() {
       const savedLang = getCookie("preferred_language");
-  
-      // If there's a saved language and it's not English, show loading screen
-      if (savedLang && savedLang !== "en") {
+
+      // If there's a saved language and it's not the page language, show loading screen
+      if (savedLang && savedLang !== config.pageLanguage) {
         showLoading();
         setTimeout(hideLoading, 2000);
       }
-  
+
       new google.translate.TranslateElement(
         {
-          pageLanguage: "en",
+          pageLanguage: config.pageLanguage,
           includedLanguages: languages.map((l) => l.code).join(","),
           layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT,
           autoDisplay: false,
         },
         "google_translate_element"
       );
-  
-      if (savedLang && savedLang !== "en") {
-        // Change language with a short delay
+
+      if (savedLang && savedLang !== config.pageLanguage) {
         setTimeout(() => {
           changeLanguage(savedLang);
         }, 500);
       } else {
-        // Browser language check
-        const browserLang = (navigator.language || navigator.userLanguage)
-          .split("-")[0];
-        if (languages.some((l) => l.code === browserLang) && browserLang !== "en") {
+        const browserLang = (navigator.language || navigator.userLanguage).split("-")[0];
+        if (languages.some((l) => l.code === browserLang) && browserLang !== config.pageLanguage) {
           changeLanguage(browserLang);
         }
       }
     }
     // Google Translate callback function needs to be accessible in global scope
     window.googleTranslateElementInit = googleTranslateElementInit;
-  
+
     /** Function that adds required DOM elements and style definitions for the widget **/
     function initWidget() {
       // 1. Add style definitions
@@ -268,16 +277,16 @@
         }
       `;
       document.head.appendChild(style);
-  
+
       // 2. Create and add required DOM elements to body
-  
+
       // a) Overlay (background dimming)
       const overlay = document.createElement("div");
       overlay.id = "ml-overlay";
       overlay.className = "ml-overlay";
       overlay.addEventListener("click", closePopup);
       document.body.appendChild(overlay);
-  
+
       // b) Popup and language options grid inside
       const popup = document.createElement("div");
       popup.id = "ml-languagePopup";
@@ -300,7 +309,7 @@
       });
       popup.appendChild(grid);
       document.body.appendChild(popup);
-  
+
       // c) Loading overlay (spinner)
       const loadingOverlay = document.createElement("div");
       loadingOverlay.id = "ml-loadingOverlay";
@@ -309,14 +318,14 @@
       spinner.className = "ml-loading-spinner";
       loadingOverlay.appendChild(spinner);
       document.body.appendChild(loadingOverlay);
-  
+
       // d) Hidden container for Google Translate
       if (!document.getElementById("google_translate_element")) {
         const gtElem = document.createElement("div");
         gtElem.id = "google_translate_element";
         document.body.appendChild(gtElem);
       }
-  
+
       // 3. Create button to show language selection
       const langButton = document.createElement("button");
       langButton.id = "ml-languageButton";
@@ -326,7 +335,7 @@
         <span class="ml-language-name notranslate">English</span>
       `;
       langButton.addEventListener("click", openPopup);
-  
+
       // 4. Check where to place the button:
       // If developer added <div id="ml-lang-selector"></div> on page, add there, otherwise add to body
       const placeholder = document.getElementById("multilang");
@@ -336,7 +345,7 @@
         document.body.appendChild(langButton);
       }
     }
-  
+
     /** Dynamically adds Google Translate API script **/
     function loadGoogleTranslateScript() {
       const gtScript = document.createElement("script");
@@ -345,7 +354,7 @@
         "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
       document.body.appendChild(gtScript);
     }
-  
+
     /** Run initWidget function immediately if DOM is ready, otherwise run on DOMContentLoaded **/
     function run() {
       if (document.readyState === "loading") {
@@ -358,6 +367,7 @@
         loadGoogleTranslateScript();
       }
     }
-  
+
     run();
-  })();
+  }
+})();

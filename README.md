@@ -56,18 +56,60 @@ Below is an example of a basic HTML page using the widget:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Example Page</title>
+  <script src="https://unpkg.com/google-translate-pure-js@latest/js/multilang.js"></script>  
+  <title>Sample Page</title>
 </head>
 <body>
-  <!-- Your site content -->
+  <center>
+    <h1>Google Translate Widget</h1>
+    <p>Click on the flag to change the language.</p>
   <h1>Welcome</h1>
-  <p>This content will be automatically translated based on your language selection.</p>
+  <p>This content will be automatically translated according to your selected language.</p>
 
-  <!-- Placeholder for the language selector -->
   <div id="multilang"></div>
+  <br><br><br><br><br><br><br>
+  <a href="https://www.buymeacoffee.com/1979" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+  </center>
+  <script>
+    // Optional: Configure with custom languages
+    initMultiLang({
+      pageLanguage: "en", // Set default page language
+      languages: [        // Optional: Override default languages
+        { code: "en", name: "English", flag: "🇬🇧" },
+        { code: "es", name: "Español", flag: "🇪🇸" },
+        { code: "fr", name: "Français", flag: "🇫🇷" },
+        { code: "tr", name: "Türkçe", flag: "🇹🇷" },
+        // Add more languages as needed
+      ]
+    });
 
-  <!-- Include the widget script -->
-  <script src="js/multilang.js"></script>
+    // ➡️ Or use default configuration
+    // ➡️ ➡️ initMultiLang();
+
+    /*
+    initMultiLang defaults: 
+    Page lang:en and default languages:
+      { code: "af", name: "Afrikaans", flag: "🇿🇦" },
+      { code: "ar", name: "العربية", flag: "🇸🇦" },
+      { code: "cs", name: "Čeština", flag: "🇨🇿" },
+      { code: "nl", name: "Nederlands", flag: "🇳🇱" },
+      { code: "en", name: "English", flag: "🇬🇧" },
+      { code: "fi", name: "Suomi", flag: "🇫🇮" },
+      { code: "fr", name: "Français", flag: "🇫🇷" },
+      { code: "de", name: "Deutsch", flag: "🇩🇪" },
+      { code: "hu", name: "Magyar", flag: "🇭🇺" },
+      { code: "it", name: "Italiano", flag: "🇮🇹" },
+      { code: "ja", name: "日本語", flag: "🇯🇵" },
+      { code: "ko", name: "한국어", flag: "🇰🇷" },
+      { code: "pl", name: "Polski", flag: "🇵🇱" },
+      { code: "pt", name: "Português", flag: "🇵🇹" },
+      { code: "ru", name: "Русский", flag: "🇷🇺" },
+      { code: "es", name: "Español", flag: "🇪🇸" },
+      { code: "sv", name: "Svenska", flag: "🇸🇪" },
+      { code: "tr", name: "Türkçe", flag: "🇹🇷" },
+    */AnimationEffect
+
+  </script>
 </body>
 </html>
 ```
@@ -77,6 +119,10 @@ Below is an example of a basic HTML page using the widget:
 - **Styling:** The widget's CSS is injected via a `<style>` block within `multilang.js`. You can edit this block to change the appearance.
 - **Language List:** Modify the `languages` array in `multilang.js` to add or remove language options.
 - **Placeholder:** The widget looks for an element with the ID `multilang` to insert the language button. Change or add your own placeholder as needed.
+
+## Configuration
+
+You can customize the widget by passing configuration options when initializing:
 
 ## Support & Donations
 

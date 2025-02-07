@@ -1,6 +1,6 @@
 {
     "name": "google-translate-pure-js",
-    "version": "1.0.0",
+    "version": "1.0.06",
     "description": "A lightweight widget for multilingual website support using the Google Translate API.",
     "main": "js/multilang.js",
     "scripts": {

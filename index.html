@@ -1,21 +1,61 @@
-/index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Widget script file -->
-  <!--  <script src="js/multilang.js"></script> -->
-  <script src="https://unpkg.com/google-translate-pure-js/js/multilang.js"></script>  
+  <script src="https://unpkg.com/google-translate-pure-js@latest/js/multilang.js"></script>  
   <title>Sample Page</title>
 </head>
 <body>
-  <!-- Site content goes here -->
+  <center>
+    <h1>Google Translate Widget</h1>
+    <p>Click on the flag to change the language.</p>
   <h1>Welcome</h1>
   <p>This content will be automatically translated according to your selected language.</p>
 
-  <!-- Area where language selection button will be placed -->
   <div id="multilang"></div>
+  <br><br><br><br><br><br><br>
+  <a href="https://www.buymeacoffee.com/1979" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+  </center>
+  <script>
+    // Optional: Configure with custom languages
+    initMultiLang({
+      pageLanguage: "en", // Set default page language
+      languages: [        // Optional: Override default languages
+        { code: "en", name: "English", flag: "🇬🇧" },
+        { code: "es", name: "Español", flag: "🇪🇸" },
+        { code: "fr", name: "Français", flag: "🇫🇷" },
+        { code: "tr", name: "Türkçe", flag: "🇹🇷" },
+        // Add more languages as needed
+      ]
+    });
 
+    // ➡️ Or use default configuration
+    // ➡️ ➡️ initMultiLang();
+
+    /*
+    initMultiLang defaults: 
+    Page lang:en and default languages:
+      { code: "af", name: "Afrikaans", flag: "🇿🇦" },
+      { code: "ar", name: "العربية", flag: "🇸🇦" },
+      { code: "cs", name: "Čeština", flag: "🇨🇿" },
+      { code: "nl", name: "Nederlands", flag: "🇳🇱" },
+      { code: "en", name: "English", flag: "🇬🇧" },
+      { code: "fi", name: "Suomi", flag: "🇫🇮" },
+      { code: "fr", name: "Français", flag: "🇫🇷" },
+      { code: "de", name: "Deutsch", flag: "🇩🇪" },
+      { code: "hu", name: "Magyar", flag: "🇭🇺" },
+      { code: "it", name: "Italiano", flag: "🇮🇹" },
+      { code: "ja", name: "日本語", flag: "🇯🇵" },
+      { code: "ko", name: "한국어", flag: "🇰🇷" },
+      { code: "pl", name: "Polski", flag: "🇵🇱" },
+      { code: "pt", name: "Português", flag: "🇵🇹" },
+      { code: "ru", name: "Русский", flag: "🇷🇺" },
+      { code: "es", name: "Español", flag: "🇪🇸" },
+      { code: "sv", name: "Svenska", flag: "🇸🇪" },
+      { code: "tr", name: "Türkçe", flag: "🇹🇷" },
+    */AnimationEffect
+
+  </script>
 </body>
 </html>
