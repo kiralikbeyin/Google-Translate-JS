@@ -146,14 +146,16 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 1. **Clone or Download the Repository:**  
    Place the `multilang.js` file into your project.
-
+   ```html
+   <script src="js/multilang.js"></script>
+   ```
 2. **Add a Placeholder Element:**  
    Insert a `<div id="multilang"></div>` where you want the language selector button to appear.
 
 3. **Include the Script:**  
    Add the following line to your HTML file:
    ```html
-   <script src="js/multilang.js"></script>
+   <script>initMultiLang();></script>
    ```
 
 **Customize:**  
