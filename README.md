@@ -23,18 +23,6 @@ You can include the widget in your project in two ways:
 
    Place the `multilang.js` file in your project (for example, in a `js` folder).
 
-3. **Include the Widget in Your HTML**
-
-   Add a placeholder element where you want the language selector button to appear, and then include the script:
-
-   ```html
-   <!-- Placeholder for the language selector (position it wherever you like) -->
-   <div id="multilang"></div>
-
-   <!-- Include the widget script -->
-   <script src="js/multilang.js"></script>
-   ```
-
    If you do not provide a placeholder with the ID `multilang`, the widget will automatically append the language button to the `<body>`.
 
 ## Usage
